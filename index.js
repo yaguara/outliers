@@ -59,6 +59,17 @@ function calc(arr, key) {
   return outliers;
 }
 
+outliers.getMiddle = (arr, key) => {
+  if (key) arr = arr.map(function(v) { return v[key]; });
+
+  arr = arr.sort(function(a, b) {
+    return a - b;
+  });
+
+  return median(arr);
+}
+
+
 /**
  * Find the median
  *
